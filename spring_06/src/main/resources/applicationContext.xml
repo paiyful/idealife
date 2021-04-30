@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--扫描 com下的所有注解-->
+<!--    创建car对象-->
+    <bean id="car" class="com.bean.Car">
+        <property name="carName" value="五菱宏光"/>
+        <property name="price" value="10000"/>
+    </bean>
+<!--    创建Student对象-->
+    <bean id="student" class="com.bean.Student">
+        <property name="name" value="张三"/>
+        <property name="password" value="1234"/>
+        <property name="car" ref="car"/>
+        <property name="food">
+            <list>
+                <value>炒米饭</value>
+                <value>炒拉条</value>
+                <value>炒刀削</value>
+            </list>
+        </property>
+    </bean>
+</beans>

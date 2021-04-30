@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.StudentDao">
+    <insert id="StudentAdd" parameterType="com.bean.Student">
+        insert into student1(id,name,sroce,gender,info) values(#{id},#{name},#{sroce},#{gender},#{info});
+    </insert>
+    <select id="selectAll" resultType="com.bean.Student">
+        select * from student1;
+    </select>
+    <select id="SelectOnes" resultType="com.bean.Student">
+        select * from student1 where id <![CDATA[<=]]> #{id};
+    </select>
+</mapper>

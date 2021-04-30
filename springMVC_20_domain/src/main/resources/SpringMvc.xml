@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.fc.controller"/>
+
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+
+    <mvc:annotation-driven/>
+
+<!--    allowed-origins:允许的以逗号分隔的源，可以使用*代表全部-->
+<!--    allowed-origin-patterns:可替代支持通过模式声明的源(例如：*.domain1.com)-->
+<!--    max-age="1800":有效期时间30分钟-->
+<!--    mapping path:映射的路径-->
+<!--    allowed-methods:允许的方法-->
+<!--    allowed-headers:以逗号分隔的头部列表-->
+<!--    【注意】allow-credentials="true"和allowed-origins="*"不能同时出现-->
+<!--    <mvc:cors>-->
+<!--        <mvc:mapping path="/**"-->
+<!--                     allowed-origins="*"-->
+<!--                     allowed-methods="POST, GET, OPTIONS, DELETE, PUT"-->
+<!--                     allowed-origin-patterns="*"-->
+<!--                     allowed-headers="Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"-->
+<!--                     max-age="1800"/>-->
+<!--    </mvc:cors>-->
+
+<!--配置拦截器-->
+    <mvc:interceptors>
+        <!--    配置跨域拦截器-->
+        <mvc:interceptor>
+<!--            指定拦截的路径-->
+            <mvc:mapping path="/**"/>
+<!--            自定义拦截器-->
+            <bean class="com.fc.ceptor.CrossCeptor"/>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+
+</beans>

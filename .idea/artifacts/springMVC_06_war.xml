@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springMVC_06:war">
+    <output-path>$PROJECT_DIR$/springMVC_06/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>springMVC_06</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="springMVC_06-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="springMVC_06:war exploded" />
+    </root>
+  </artifact>
+</component>

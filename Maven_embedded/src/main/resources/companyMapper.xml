@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.CompanyDao">
+    <resultMap id="CompanyMap" type="com.bean.Company">
+        <id column="c_id" property="cid"/>
+        <result column="c_name" property="cname"/>
+        <collection property="employees" javaType="List" ofType="com.bean.Employee" column="c_id" select="com.dao.EmployeeDao.selectEmployeeByidAndName">
+            <id column="e_id" property="eid"/>
+            <result column="e_name" property="ename"/>
+            <result column="e_age" property="eage"/>
+            <result column="e_info" property="info"/>
+        </collection>
+    </resultMap>
+    <select id="selectCompanyById" resultMap="CompanyMap">
+        select * from company where c_name=#{cname}
+    </select>
+</mapper>

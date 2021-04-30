@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.StudentDao">
+<!--    缓存开始-->
+    <cache />
+    <sql id="StudentSql" >
+        id,name,sroce,gender,info
+    </sql>
+    <select id="selectAll" resultType="Student">
+        select 
+        <include refid="StudentSql"/>
+        from student1;
+    </select>
+    <insert id="insertStudent" parameterType="Student">
+        insert into
+        student1(id
+                 <if test="name !=null">
+                    ,name
+                 </if>
+                 <if test="sroce!=null">
+                     ,sroce
+                 </if>
+                 <if test="gender !=null">
+                     ,gender
+                 </if>
+                 <if test="info !=null">
+                     ,info
+                 </if>
+                 )
+                 values (#{id}
+            <if test="name !=null">
+                ,#{name}
+            </if>
+            <if test="sroce!=null">
+                ,#{sroce}
+            </if>
+            <if test="gender !=null">
+                ,#{gender}
+            </if>
+            <if test="info !=null">
+                ,#{info}
+            </if>
+        );
+    </insert>
+    <select id="selectStudentByIds" resultType="Student">
+        select <include refid="StudentSql"/>
+        from student1
+        <where>
+            id in
+        <foreach collection="array" separator="," close=")" open="(" index="1" item="id">
+            #{id}
+        </foreach>
+        </where>
+    </select>
+    <update id="updateStudentById" parameterType="com.bean.Student">
+        update student1
+        <trim prefix="set" prefixOverrides=",">
+            <if test="id!=null">
+                ,id=#{id}
+            </if>
+            <if test="name!=null">
+                ,name =#{name}
+            </if>
+            <if test="gender!=null">
+                ,gender=#{gender}
+            </if>
+            <if test="sroce!=null">
+                ,sroce=#{sroce}
+            </if>
+            <if test="info!=null">
+                ,info=#{info}
+            </if>
+        </trim>
+        <trim prefix="where" prefixOverrides="and">
+            <if test="id!=null">
+                and id=#{id}
+            </if>
+            <if test="name!=null">
+                and name=#{name}
+            </if>
+            <if test="gender!=null">
+                and gender=#{gender}
+            </if>
+            <if test="sroce!=null">
+                and sroce=#{sroce}
+            </if>
+            <if test="info!=null">
+                info=#{info}
+            </if>
+        </trim>
+    </update>
+</mapper>

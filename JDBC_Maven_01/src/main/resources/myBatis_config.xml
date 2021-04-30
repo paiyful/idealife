@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--根标签：配置-->
+<configuration>
+    <properties resource="Link.properties"
+    <!--运行环境，注意：default可以随便写，但是，必须和一个环境是匹配的-->
+    <environments default="development">
+        <!--运行环境，可以是多个，id可以随便写，但是必须有一个和default是一样的-->
+        <environment id="development">
+            <!-- 事务管理器，不要动-->
+            <transactionManager type="JDBC"/>
+            <!--数据源，type：数据库的连接池，比如：c3p0和druid,后天用德鲁伊，-->
+            <dataSource type="POOLED">
+                <!--连接数据库的一些参数-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/lianxi?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1234"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--映射-->
+    <!--<mappers>
+        <mapper resource="org/mybatis/example/BlogMapper.xml"/>
+    </mappers>-->
+    <mappers>
+        <mapper resource="AsdMapper.xml"/>
+    </mappers>
+</configuration>

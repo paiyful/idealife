@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--扫描 com下的所有注解-->
+    <bean id="student" class="com.bean.Student">
+        <constructor-arg name="name" value="针布搓" index="0"/>
+        <constructor-arg name="password" value="1234" index="1"/>
+        <constructor-arg name="food" type="java.util.List">
+            <list>
+                <value>馒头</value>
+                <value>米饭</value>
+                <value>炒饭</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg name="car" ref="car" type="com.bean.Car"/>
+    </bean>
+    <bean id="car" class="com.bean.Car">
+        <constructor-arg name="carName" value="五菱宏光" index="0"/>
+        <constructor-arg name="price" value="10000" index="1"/>
+    </bean>
+</beans>

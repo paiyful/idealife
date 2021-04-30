@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserDao">
+    <resultMap id="UserSelectMap" type="com.bean.User">
+        <id column="u_id" property="uid"/>
+        <result column="u_name" property="uname"/>
+        <result column="u_pwd" property="upwd"/>
+        <result column="ph_id" property="Phid"/>
+        <association property="phone" javaType="com.bean.Phone">
+            <id column="ph_id" property="pid"/>
+            <result column="p_name" property="pname"/>
+        </association>
+    </resultMap>
+    <select id="selectAll" resultMap="UserSelectMap">
+        select * from user;
+    </select>
+    <select id="selectUserById" resultMap="UserSelectMap">
+        select u.*,p.* from user u inner join Phone p on u.ph_id=p.p_id where u.u_id=#{uid}
+    </select>
+</mapper>

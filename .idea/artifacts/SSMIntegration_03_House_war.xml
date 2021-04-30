@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SSMIntegration_03_House:war">
+    <output-path>$PROJECT_DIR$/SSMIntegration_03_House/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SSMIntegration_03_House</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SSMIntegration_03_House-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SSMIntegration_03_House:war exploded" />
+    </root>
+  </artifact>
+</component>

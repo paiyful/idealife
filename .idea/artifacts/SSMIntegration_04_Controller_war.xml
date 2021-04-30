@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SSMIntegration_04_Controller:war">
+    <output-path>$PROJECT_DIR$/SSMIntegration_04_Parent/SSMIntegration_04_Controller/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SSMIntegration_04_Controller</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SSMIntegration_04_Controller-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SSMIntegration_04_Controller:war exploded" />
+    </root>
+  </artifact>
+</component>

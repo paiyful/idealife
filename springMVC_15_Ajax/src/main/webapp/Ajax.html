@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<form>
+    <table>
+        <caption><h1 style="color: deeppink">测试Ajax请求</h1></caption>
+        <tr>
+            <td>账号</td>
+            <td><input type="text" name="username"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="reset" value="重置">
+                <button onclick="sendRequest()">登录</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+<script type="text/javascript">
+    function sendRequest(){
+        var serialize = $("form").serialize();
+        $.ajax({
+            type: "post",
+            url: "Ajax/TestAjax",
+            data: serialize,
+            success: function (na){
+                alert(na);
+                alert(na.code);
+                alert(na.success);
+            }
+        });
+    }
+</script>
+</html>

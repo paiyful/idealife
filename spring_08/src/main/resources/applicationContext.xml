@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-4.2.xsd ">
+
+    <bean id="studentImpl" class="com.dao.impl.StudentImpl"/>
+    <bean id="studentAdvice" class="com.advice.StudentAdvice"/>
+<!--    aop配置-->
+    <aop:config>
+        <!--            声明切入点-->
+        <!--            第一个*代表返回值类型-->
+        <!--            第二个*代表了方法名-->
+        <!--            第三个..代表了参数列表-->
+        <aop:pointcut id="pointcut" expression="execution(* com.dao.impl.StudentImpl.study())"/>
+<!--        配置切面-->
+        <aop:aspect ref="studentAdvice">
+            <aop:before method="write" pointcut-ref="pointcut"></aop:before>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

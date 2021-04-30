@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring_zhuTransComple_16" />
+        <module name="SSMIntegration_04_Controller" />
+        <module name="SSMIntegration_05_Service" />
+        <module name="Maven_MyBatisUtil_01" />
+        <module name="Maven_hd1_02" />
+        <module name="spring_TransComple_15" />
+        <module name="Maven_hd1_03" />
+        <module name="SSMIntegration_House_Bean" />
+        <module name="Maven_embedded" />
+        <module name="Maven_spring_02" />
+        <module name="springMVC_16_UploadAndDownload" />
+        <module name="SSMIntegration_House_Dao" />
+        <module name="Maven_spring_03" />
+        <module name="Maven_spring_04" />
+        <module name="SSMIntegration_05_Bean" />
+        <module name="JDBC_Maven_01" />
+        <module name="spring_12" />
+        <module name="spring_11" />
+        <module name="JDBC_Maven_03" />
+        <module name="spring_10" />
+        <module name="spring_zhuTranCample_16_02" />
+        <module name="JDBC_Maven_02" />
+        <module name="Maven_spring_01" />
+        <module name="spring_jdbc_13" />
+        <module name="spring_14" />
+        <module name="Maven_ResultMap_04" />
+        <module name="Maven_paging" />
+        <module name="spring_17" />
+        <module name="Maven_hd1_01" />
+        <module name="springMVC_03" />
+        <module name="springMVC_02" />
+        <module name="Maven_comment" />
+        <module name="springMVC_05" />
+        <module name="springMVC_04" />
+        <module name="SSMIntegration_House_Controller" />
+        <module name="springMVC_01" />
+        <module name="springMVC_20_domain" />
+        <module name="springMVC_07" />
+        <module name="springMVC_06" />
+        <module name="springMVC_09" />
+        <module name="springMVC_08" />
+        <module name="spring_01" />
+        <module name="SSMIntegration_05_Dao" />
+        <module name="spring_05" />
+        <module name="spring_04" />
+        <module name="spring_03" />
+        <module name="spring_02" />
+        <module name="spring_09" />
+        <module name="springMVC_17_Abnormal" />
+        <module name="spring_08" />
+        <module name="spring_07" />
+        <module name="spring_06" />
+        <module name="SSMIntegration_04_Service" />
+        <module name="SSMIntegration_04_Dao" />
+        <module name="SSMIntegration_03_House" />
+        <module name="springMVC_14" />
+        <module name="springMVC_13" />
+        <module name="SSMIntegration_01" />
+        <module name="SSMIntegration_02" />
+        <module name="springMVC_15" />
+        <module name="springMVC_10" />
+        <module name="Maven_ReMyBatis_01" />
+        <module name="springMVC_12" />
+        <module name="springMVC_11" />
+        <module name="springMVC_19_Interceptor" />
+        <module name="springMVC_18_Ajax" />
+        <module name="JWT_01_lianxi" />
+        <module name="SSMIntegration_04_Bean" />
+        <module name="SSMIntegration_House_Service" />
+        <module name="Spring_MVC_json" />
+        <module name="SSMIntegration_05_Controller" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+      <module name="JDBC_Maven_01" target="1.8" />
+      <module name="JDBC_Maven_02" target="1.8" />
+      <module name="JDBC_Maven_03" target="1.8" />
+      <module name="JWT_01_lianxi" target="1.8" />
+      <module name="Maven_comment" target="1.8" />
+      <module name="Maven_embedded" target="1.8" />
+      <module name="Maven_hd1_01" target="1.8" />
+      <module name="Maven_hd1_02" target="1.8" />
+      <module name="Maven_hd1_03" target="1.8" />
+      <module name="Maven_hd1_spring_01" target="1.8" />
+      <module name="Maven_MyBatisUtil_01" target="1.8" />
+      <module name="Maven_paging" target="1.8" />
+      <module name="Maven_ReMyBatis_01" target="1.8" />
+      <module name="Maven_ResultMap_04" target="1.8" />
+      <module name="Maven_spring_01" target="1.8" />
+      <module name="Maven_spring_02" target="1.8" />
+      <module name="Maven_spring_03" target="1.8" />
+      <module name="Maven_spring_04" target="1.8" />
+      <module name="spring_01" target="1.8" />
+      <module name="spring_02" target="1.8" />
+      <module name="spring_03" target="1.8" />
+      <module name="spring_04" target="1.8" />
+      <module name="spring_05" target="1.8" />
+      <module name="spring_06" target="1.8" />
+      <module name="spring_07" target="1.8" />
+      <module name="spring_08" target="1.8" />
+      <module name="spring_09" target="1.8" />
+      <module name="spring_10" target="1.8" />
+      <module name="spring_11" target="1.8" />
+      <module name="spring_12" target="1.8" />
+      <module name="spring_14" target="1.8" />
+      <module name="spring_17" target="1.8" />
+      <module name="spring_jdbc_13" target="1.8" />
+      <module name="spring_JdbcTemple_14" target="1.8" />
+      <module name="Spring_MVC_json" target="1.8" />
+      <module name="Spring_MVC_json_01" target="1.8" />
+      <module name="spring_TransComple_15" target="1.8" />
+      <module name="spring_zhuTranCample_16_02" target="1.8" />
+      <module name="spring_zhuTranComple_16_02" target="1.8" />
+      <module name="spring_zhuTransComple_16" target="1.8" />
+      <module name="springMVC_00" target="1.8" />
+      <module name="springMvc_00" target="1.8" />
+      <module name="springMVC_01" target="1.8" />
+      <module name="springMVC_02" target="1.8" />
+      <module name="springMVC_03" target="1.8" />
+      <module name="springMVC_04" target="1.8" />
+      <module name="springMVC_05" target="1.8" />
+      <module name="springMVC_06" target="1.8" />
+      <module name="springMVC_07" target="1.8" />
+      <module name="springMVC_08" target="1.8" />
+      <module name="springMVC_09" target="1.8" />
+      <module name="springMVC_10" target="1.8" />
+      <module name="springMVC_11" target="1.8" />
+      <module name="springMVC_12" target="1.8" />
+      <module name="springMVC_13" target="1.8" />
+      <module name="springMVC_14" target="1.8" />
+      <module name="springMVC_15" target="1.8" />
+      <module name="springMVC_15_Ajax" target="1.8" />
+      <module name="springMVC_16_UploadAndDownload" target="1.8" />
+      <module name="springMVC_17_Abnormal" target="1.8" />
+      <module name="springMVC_18_Ajax" target="1.8" />
+      <module name="springMVC_19_Interceptor" target="1.8" />
+      <module name="springMVC_20_domain" target="1.8" />
+      <module name="SSMIntegation" target="1.8" />
+      <module name="SSMIntegration_01" target="1.8" />
+      <module name="SSMIntegration_02" target="1.8" />
+      <module name="SSMIntegration_03_House" target="1.8" />
+      <module name="SSMIntegration_04_Bean" target="1.8" />
+      <module name="SSMIntegration_04_Controller" target="1.8" />
+      <module name="SSMIntegration_04_Dao" target="1.8" />
+      <module name="SSMIntegration_04_Parent" target="1.8" />
+      <module name="SSMIntegration_04_Service" target="1.8" />
+      <module name="SSMIntegration_05_Bean" target="1.8" />
+      <module name="SSMIntegration_05_Controller" target="1.8" />
+      <module name="SSMIntegration_05_Dao" target="1.8" />
+      <module name="SSMIntegration_05_Service" target="1.8" />
+      <module name="SSMIntegration_House_Bean" target="1.8" />
+      <module name="SSMIntegration_House_Controller" target="1.8" />
+      <module name="SSMIntegration_House_Dao" target="1.8" />
+      <module name="SSMIntegration_House_Service" target="1.8" />
+      <module name="SSMIntegration_Subcontract_05" target="1.8" />
+      <module name="untitled" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

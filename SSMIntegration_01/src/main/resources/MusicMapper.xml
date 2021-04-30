@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fc.dao.MusicDao">
+    <!--开启二级缓存-->
+    <cache/>
+    <!--    查询全部-->
+    <select id="getAll" resultType="music">
+        select *
+        from tb_music
+    </select>
+    <!--    查询id-->
+    <select id="findById" parameterType="java.lang.Integer" resultType="music">
+        select *
+        from tb_music
+        where music_id = #{musicId}
+    </select>
+    <!--    通过关键字查找歌曲-->
+    <select id="search" resultType="music" parameterType="java.lang.String">
+        select * from tb_music
+        <where>
+            <if test="music_name!=null">
+                or music_name like #{keyword}
+            </if>
+            <if test="music_album_name!=null">
+                or music_album_name like #{keyword}
+            </if>
+            <if test="music_artist_name!=null">
+                or music_artist_name like #{keyword}
+            </if>
+        </where>
+    </select>
+</mapper>

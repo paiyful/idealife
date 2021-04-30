@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    配置Driver,url,user,password-->
+    <properties resource="Link_Mybatis.properties"/>
+<!--    开启全局缓存,这个要放在properties之后，typeAlias之前-->
+    <settings>
+<!--        二级缓存默认开启-->
+        <setting name="cacheEnabled" value="true"/>
+<!--        映射下划线变成驼峰大小写-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+<!--开启延迟加载 （懒加载）默认不开-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+<!--        要想使用懒加载必须把积极加载改成懒加载 积极加载默认为true 需要将true改成false-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+<!--    起别名-->
+    <typeAliases>
+        <typeAlias type="com.bean.Student" alias="Student"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.Driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.user}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+<!--    配置Mapper镜像-->
+    <mappers>
+        <mapper resource="StudentMapper.xml"/>
+    </mappers>
+</configuration>

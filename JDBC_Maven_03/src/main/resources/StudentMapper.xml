@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.StudentDao">
+<!--    删除-->
+    <delete id="deteleStudent" parameterType="student">
+        delete from student1 where id= #{id};
+    </delete>
+<!--    添加-->
+    <insert id="studentAdd" parameterType="student">
+        insert into student1(id,name,sroce,gender,info) values(#{id},#{name},#{sroce},#{gender},#{info})
+    </insert>
+<!--    按照id修改信息-->
+    <update id="studentUpdate" parameterType="student">
+        update student1 set name=#{name},sroce=#{sroce},gender=#{gender},info=#{info} where id=#{id};
+    </update>
+<!--    查询student1表-->
+    <select id="studentSelect" resultType="student">
+        select * from student1;
+    </select>
+<!--    按照id和姓名查询-->
+    <select id="studentSelectByIdAndByName" resultType="com.bean.Student">
+        select * from student1 where id=#{id} and name=#{name};
+    </select>
+<!--    自增长插入-->
+    <insert id="studentAddGner" parameterType="student" useGeneratedKeys="true" keyProperty="id">
+        insert into student1(id,name,sroce,gender,info) values(#{id},#{name},#{sroce},#{gender},#{info})
+    </insert>
+</mapper>
