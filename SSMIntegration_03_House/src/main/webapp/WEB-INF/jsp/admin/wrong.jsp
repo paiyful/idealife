@@ -63,13 +63,13 @@
 								
 									<tr
 										style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-										<td>${wrong.house_id }</td>
+										<td>${wrong.houseId }</td>
 
-										<td>${wrong.address}</td>
+										<td>${wrong.houselist.address}</td>
 										
 										
 										<td>${wrong.date}</td>
-										<td>${wrong.name}</td>
+										<td>${wrong.userlist.name}</td>
 										<td>${wrong.detail}</td>
 										<td>${wrong.status}</td>
 										<td><a class="link-update"

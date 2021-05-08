@@ -3,8 +3,14 @@ package com.fc.dao;
 import com.fc.bean.Paid;
 import com.fc.bean.PaidExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import com.fc.bean.Topaid;
+import com.fc.bean.Zulist;
+import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface PaidMapper {
     long countByExample(PaidExample example);
 
@@ -27,4 +33,8 @@ public interface PaidMapper {
     int updateByPrimaryKeySelective(Paid record);
 
     int updateByPrimaryKey(Paid record);
+//  分页
+    PageInfo<Zulist> pagination(Integer pageNum);
+//  查询全部已缴费
+    List<Paid> selectAll();
 }

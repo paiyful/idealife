@@ -2,9 +2,12 @@ package com.fc.dao;
 
 import com.fc.bean.Schedule;
 import com.fc.bean.ScheduleExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface ScheduleMapper {
     long countByExample(ScheduleExample example);
 

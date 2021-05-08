@@ -16,4 +16,6 @@ public class Userlist extends UserlistKey {
 
     private Integer userId;
 
+    private User user;
+
 }

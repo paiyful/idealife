@@ -4,7 +4,9 @@ import com.fc.bean.Topaid;
 import com.fc.bean.TopaidExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface TopaidMapper {
     long countByExample(TopaidExample example);
 
@@ -27,4 +29,6 @@ public interface TopaidMapper {
     int updateByPrimaryKeySelective(Topaid record);
 
     int updateByPrimaryKey(Topaid record);
+
+    List<Topaid> toPaidList();
 }

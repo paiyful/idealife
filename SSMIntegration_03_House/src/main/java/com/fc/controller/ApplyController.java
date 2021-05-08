@@ -6,11 +6,12 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("apply")
 public class ApplyController {
     @Autowired
@@ -31,6 +32,20 @@ public class ApplyController {
     @RequestMapping("houselist.action")
     public  ModelAndView houselist(Integer page){
         return findAllApply(page);
+    }
+//    拒绝租贷
+    @RequestMapping("reFuseApply")
+    public ModelAndView reFuseApply(String houseId){
+        ModelAndView mv = new ModelAndView();
+        Integer affectRows = applyService.reFuseApply(houseId);
+        if(affectRows>0){
+            mv.addObject("error","拒绝成功！");
+            mv.setViewName("/admin/main1.jsp");
+        }else{
+            mv.addObject("error","拒绝失败！");
+            mv.setViewName("/admin/main1.jsp");
+        }
+        return mv;
     }
 
 }

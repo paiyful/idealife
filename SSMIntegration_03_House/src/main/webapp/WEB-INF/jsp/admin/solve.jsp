@@ -87,13 +87,13 @@
 								<c:forEach items="${solve}" var="solve">
 									<tr
 										style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-										<td>${solve.house_id }</td>
+										<td>${solve.houseId }</td>
 
-										<td>${solve.address}</td>
+										<td>${solve.houselist.address}</td>
 										
 										
 										<td>${solve.date}</td>
-										<td>${solve.name}</td>
+										<td>${solve.userlist.name}</td>
 										<td>${solve.detail}</td>
 										<td>${solve.status}</td>
 										<td>

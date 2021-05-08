@@ -90,14 +90,14 @@
 								<c:forEach items="${paid}" var="paid">
 									<tr
 										style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-										<td>${paid.house_id }</td>
+										<td>${paid.houseId }</td>
 
-										<td>${paid.address}</td>
+										<td>${paid.houselist.address}</td>
 										
-										<td>${paid.price}</td>
+										<td>${paid.houselist.price}</td>
 										<td>${paid.date}</td>
 										<td>${paid.paydate}</td>
-										<td>${paid.name}</td>
+										<td>${paid.userlist.name}</td>
 										<td>${paid.status}</td>
 										<td>
 										

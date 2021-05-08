@@ -4,7 +4,9 @@ import com.fc.bean.Wrong;
 import com.fc.bean.WrongExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface WrongMapper {
     long countByExample(WrongExample example);
 
@@ -33,4 +35,6 @@ public interface WrongMapper {
     int updateByPrimaryKeyWithBLOBs(Wrong record);
 
     int updateByPrimaryKey(Wrong record);
+//    查询待处理的所有信息
+    List<Wrong> wrongList();
 }

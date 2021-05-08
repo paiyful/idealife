@@ -4,7 +4,9 @@ import com.fc.bean.Applyout;
 import com.fc.bean.ApplyoutExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ApplyoutMapper {
     long countByExample(ApplyoutExample example);
 
@@ -27,4 +29,6 @@ public interface ApplyoutMapper {
     int updateByPrimaryKeySelective(Applyout record);
 
     int updateByPrimaryKey(Applyout record);
+//  查询全部的退租申请
+    List<Applyout> findAllApplyOut();
 }

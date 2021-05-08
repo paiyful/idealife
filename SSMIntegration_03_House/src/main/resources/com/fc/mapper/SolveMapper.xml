@@ -7,6 +7,21 @@
     <result column="date" jdbcType="DATE" property="date" />
     <result column="userlist_id" jdbcType="INTEGER" property="userlistId" />
     <result column="status" jdbcType="VARCHAR" property="status" />
+    <association property="houselist" javaType="com.fc.bean.Houselist">
+      <id property="id" column="id"/>
+      <id column="houseid" property="houseid"/>
+      <result column="address" property="address"/>
+      <result column="area" property="area"/>
+      <result column="price" property="price"/>
+      <result column="status" property="status"/>
+    </association>
+    <association property="userlist" javaType="com.fc.bean.Userlist">
+      <id column="id" property="id"/>
+      <id column="idcard" property="idcard"/>
+      <result column="name" property="name"/>
+      <result column="phone" property="phone"/>
+      <result column="user_id" property="userId"/>
+    </association>
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.fc.bean.Solve">
     <result column="detail" jdbcType="LONGVARCHAR" property="detail" />
@@ -267,4 +282,16 @@
       status = #{status,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+<!--  添加已处理的信息-->
+  <insert id="insertSolveWithWrong" parameterType="com.fc.bean.Solve">
+    insert into solve(house_id, date, detail, userlist_id, status)  select house_id, date, detail, userlist_id, status from wrong where id=#{id}
+  </insert>
+<!--  将所有的未处理变成已处理-->
+  <update id="updateSolveStatus" parameterType="com.fc.bean.Solve">
+    update solve set status="已处理" where status="待处理"
+  </update>
+<!--  查询全部的已处理信息-->
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * from solve s inner join houselist h on s.house_id=h.houseid inner join userlist u on s.userlist_id = u.id
+  </select>
 </mapper>

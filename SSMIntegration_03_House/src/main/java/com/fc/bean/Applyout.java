@@ -1,5 +1,14 @@
 package com.fc.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Component
 public class Applyout {
     private Integer aoid;
 
@@ -7,27 +16,7 @@ public class Applyout {
 
     private Integer userlistId;
 
-    public Integer getAoid() {
-        return aoid;
-    }
+    private Userlist userlist;
 
-    public void setAoid(Integer aoid) {
-        this.aoid = aoid;
-    }
-
-    public Integer getHouseId() {
-        return houseId;
-    }
-
-    public void setHouseId(Integer houseId) {
-        this.houseId = houseId;
-    }
-
-    public Integer getUserlistId() {
-        return userlistId;
-    }
-
-    public void setUserlistId(Integer userlistId) {
-        this.userlistId = userlistId;
-    }
+    private Houselist houselist;
 }

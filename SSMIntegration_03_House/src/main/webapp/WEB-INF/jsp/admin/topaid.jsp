@@ -74,14 +74,14 @@
 								<c:forEach items="${topaid}" var="topaid">
 									<tr
 										style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-										<td>${topaid.house_id }</td>
+										<td>${topaid.houseId }</td>
 
-										<td>${topaid.address}</td>
+										<td>${topaid.houselist.address}</td>
 										
-										<td>${topaid.price}</td>
+										<td>${topaid.houselist.price}</td>
 										<td>${topaid.date}</td>
 										
-										<td>${topaid.name}</td>
+										<td>${topaid.userlist.name}</td>
 										<td>${topaid.status}</td>
 										
 										

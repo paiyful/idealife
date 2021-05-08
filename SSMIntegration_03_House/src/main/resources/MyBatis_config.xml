@@ -43,5 +43,11 @@
         <mapper resource="com/fc/mapper/HetongMapper.xml"/>
         <mapper resource="com/fc/mapper/CheckoutMapper.xml"/>
         <mapper resource="com/fc/mapper/ApplyMapper.xml"/>
+        <mapper resource="com/fc/mapper/ApplyoutMapper.xml"/>
+        <mapper resource="com/fc/mapper/WrongMapper.xml"/>
+        <mapper resource="com/fc/mapper/SolveMapper.xml"/>
+        <mapper resource="com/fc/mapper/TopaidMapper.xml"/>
+        <mapper resource="com/fc/mapper/PaidMapper.xml"/>
+        <mapper resource="com/fc/mapper/ScheduleMapper.xml"/>
     </mappers>
 </configuration>

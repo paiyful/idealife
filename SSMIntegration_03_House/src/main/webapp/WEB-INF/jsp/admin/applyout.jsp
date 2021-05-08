@@ -66,37 +66,34 @@
 								
 									<tr
 										style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-										<td>${applyout.house_id}</td>
+										<td>${applyout.houseId}</td>
 
-										<td>${applyout.address}</td>
+										<td>${applyout.houselist.address}</td>
 										
-										<td>${applyout.status}</td>
-										<c:forEach items="${applyout.userlist}" var="userlist">
-										<td>${userlist.name}</td>
-										<td>${userlist.idcard}</td>
-										<td>${userlist.phone}</td>
+										<td>${applyout.houselist.status}</td>
+										<td>${applyout.userlist.name}</td>
+										<td>${applyout.userlist.idcard}</td>
+										<td>${applyout.userlist.phone}</td>
 										
 										<td>
 										<c:choose>
-										<c:when test="${applyout.status=='申请中'}">
+										<c:when test="${applyout.houselist.status=='申请中'}">
 										<a class="link-update"
-											href="/applyout/agreeApplyOut?id=${applyout.id }"
+											href="/applyout/agreeApplyOut?aoid=${applyout.aoid }"
 											onclick="return window.confirm('确定要同意退租吗？')">同意</a>
 											&nbsp;&nbsp; 
 											
 											<a class="link-del"
-											 href="/applyout/refuseApplyout?id=${applyout.id }"
+											 href="/applyout/refuseApplyout?aoid=${applyout.aoid }"
 											onclick="return window.confirm('确定要拒绝吗？')">拒绝</a>
 											</c:when >
 											<c:otherwise>
 												 <a class="link-del"
-											 href="/applyout/deleteApplyOut?id=${applyout.id}"
+											 href="/applyout/deleteApplyOut?aoid=${applyout.aoid}"
 											onclick="return window.confirm('确定要删除该记录吗？')">删除</a>
 												</c:otherwise>
 										 </c:choose>
 										 </td>
-										</c:forEach>
-										
 									</tr>
 
 								</c:forEach>

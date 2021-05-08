@@ -68,11 +68,11 @@
 										<td>${apply.userlist.phone}</td>
 										<td>
 										<a class="link-update"
-											href="/zu/toAddZuList?house_id=${apply.houseId}">同意租赁</a>
+											href="/zu/toAddZuList?houseId=${apply.houseId}">同意租赁</a>
 											&nbsp;&nbsp; 
 											<input type="hidden" name="houseId" value="${apply.houseId}"/>
 											<a class="link-del"
-											 href="/apply/reFuseApply?house_id=${apply.houseId}"
+											 href="/apply/reFuseApply?houseId=${apply.houseId}"
 											onclick="return window.confirm('确定要拒绝该租客的申请吗？')">拒绝租赁</a></td>
 										
 											

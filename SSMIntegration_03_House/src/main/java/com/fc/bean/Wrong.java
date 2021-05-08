@@ -1,7 +1,17 @@
 package com.fc.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Component
 public class Wrong {
     private Integer id;
 
@@ -15,51 +25,7 @@ public class Wrong {
 
     private String detail;
 
-    public Integer getId() {
-        return id;
-    }
+    private Houselist houselist;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getHouseId() {
-        return houseId;
-    }
-
-    public void setHouseId(String houseId) {
-        this.houseId = houseId == null ? null : houseId.trim();
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Integer getUserlistId() {
-        return userlistId;
-    }
-
-    public void setUserlistId(Integer userlistId) {
-        this.userlistId = userlistId;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
-    }
-
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail == null ? null : detail.trim();
-    }
+    private Userlist userlist;
 }

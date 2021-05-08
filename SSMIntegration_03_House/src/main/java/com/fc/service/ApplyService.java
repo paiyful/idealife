@@ -10,4 +10,6 @@ public interface ApplyService {
     List<Apply> findAllApply();
 //     分页
     PageInfo<Apply> pagination(Integer pageNum);
+
+    Integer reFuseApply(String houseId);
 }

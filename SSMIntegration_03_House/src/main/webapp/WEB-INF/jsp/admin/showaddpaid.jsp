@@ -63,16 +63,16 @@
 								
 									<tr
 										style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-										<td>${zulist.house_id }</td>
+										<td>${zulist.houseId }</td>
 
-										<td>${zulist.address}</td>
+										<td>${zulist.houselist.address}</td>
 										
-										<td>${zulist.price}</td>
+										<td>${zulist.houselist.price}</td>
 										<td>${zulist.userlist.name}</td>
 										<td>${zulist.userlist.idcard}</td>
 										<td>${zulist.userlist.phone}</td>
 										<td><a class="link-update"
-											href="/paid/addPaid?id=${zulist.zid }">收租</a>
+											href="/paid/addPaid?zid=${zulist.zid }">收租</a>
 											&nbsp;&nbsp; 
 											
 											

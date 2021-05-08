@@ -5,6 +5,21 @@
     <id column="aoid" jdbcType="INTEGER" property="aoid" />
     <result column="house_id" jdbcType="INTEGER" property="houseId" />
     <result column="userlist_id" jdbcType="INTEGER" property="userlistId" />
+    <association property="houselist" javaType="com.fc.bean.Houselist">
+      <id property="id" column="id"/>
+      <id column="houseid" property="houseid"/>
+      <result column="address" property="address"/>
+      <result column="area" property="area"/>
+      <result column="price" property="price"/>
+      <result column="status" property="status"/>
+    </association>
+    <association property="userlist" javaType="com.fc.bean.Userlist">
+      <id column="id" property="id"/>
+      <id column="idcard" property="idcard"/>
+      <result column="name" property="name"/>
+      <result column="phone" property="phone"/>
+      <result column="user_id" property="userId"/>
+    </association>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -178,4 +193,8 @@
       userlist_id = #{userlistId,jdbcType=INTEGER}
     where aoid = #{aoid,jdbcType=INTEGER}
   </update>
+<!--  查询全部的退租申请-->
+  <select id="findAllApplyOut" resultMap="BaseResultMap">
+        select * from applyout a inner join userlist u on a.userlist_id = u.id inner join houselist h on h.houseid = a.house_id
+  </select>
 </mapper>

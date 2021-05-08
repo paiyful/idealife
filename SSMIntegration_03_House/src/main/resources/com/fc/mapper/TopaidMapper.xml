@@ -7,6 +7,21 @@
     <result column="date" jdbcType="DATE" property="date" />
     <result column="userlist_id" jdbcType="INTEGER" property="userlistId" />
     <result column="status" jdbcType="VARCHAR" property="status" />
+    <association property="houselist" javaType="com.fc.bean.Houselist">
+      <id property="id" column="id"/>
+      <id column="houseid" property="houseid"/>
+      <result column="address" property="address"/>
+      <result column="area" property="area"/>
+      <result column="price" property="price"/>
+      <result column="status" property="status"/>
+    </association>
+    <association property="userlist" javaType="com.fc.bean.Userlist">
+      <id column="id" property="id"/>
+      <id column="idcard" property="idcard"/>
+      <result column="name" property="name"/>
+      <result column="phone" property="phone"/>
+      <result column="user_id" property="userId"/>
+    </association>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -208,4 +223,8 @@
       status = #{status,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+<!--  查询全部的带交租金-->
+  <select id="toPaidList" resultMap="BaseResultMap">
+    select * from topaid t inner join houselist h on h.houseid=t.house_id inner join userlist u on u.id=t.userlist_id
+  </select>
 </mapper>

@@ -7,6 +7,10 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <association property="user" javaType="com.fc.bean.User">
+      <id column="id" property="id"/>
+      <result column="username" property="username"/>
+    </association>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -208,4 +212,8 @@
     where id = #{id,jdbcType=INTEGER}
       and idcard = #{idcard,jdbcType=VARCHAR}
   </update>
+<!--  查询用户列表-->
+  <select id="findAllUserList" resultMap="BaseResultMap">
+    select * from userlist u inner join user u2 on u.user_id = u2.id
+  </select>
 </mapper>
